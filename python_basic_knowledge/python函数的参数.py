@@ -28,7 +28,7 @@ def fun_1(name, age=18, *args):
 
 
 # print(fun_1('Jack', 'man'))  # ('Jack', 'man', ())
-# 'beijing'这个字符串传给了age这个参数，而age需要的应该是一个int类型的值
+# 'man'这个字符串传给了age这个参数，而age需要的应该是一个int类型的值
 
 print(fun_1('Jack', 18, 'man'))  # ('Jack', 18, ('man',))
 
@@ -42,6 +42,7 @@ print(fun_1('Jack', 20, 30))  # ('Jack', 20, (30,))
 
 
 # 对于默认参数，既可以进行位置传参，也能以关键字形式传参，但不可以同时使用
+
 # print(fun_1('Jack', 20, age=30))
 # TypeError: fun_1() got multiple values for argument 'age'
 
@@ -69,7 +70,7 @@ print(fun_3('Jack', 20, *tuple1))  # ('Jack', 20, ('man', 'Shanghai'))
 
 # -----------------------------------------------------------------
 
-# 同样，也可以使用 *dict 将一个字典 当做关键字参数传入
+# 同样，也可以使用 **dict 将一个字典 当做关键字参数传入
 
 
 def fun_4(name, age, *args, **kwargs):
@@ -91,10 +92,9 @@ print(fun_4('Marry', 21, *tuple2, **dict1))
     让使用者通过关键字参数的名字就明白要传入什么参数)，我们可以使用命名关键字参数。
 '''
 
+
 # name,age 为位置参数，city 为关键字参数
-# 当关键字参数前面没有可变参数时，需要在关键字参数前面添加*，告诉Python解释器参数的类型、
-
-
+# 当关键字参数前面没有可变参数时，需要在关键字参数前面添加*，告诉Python解释器 * 后面的参数是关键字参数
 def test_1(name, age, *, city):
     return name, age, city
 
